@@ -1,0 +1,12 @@
+{
+  "trello": {
+    "browser" : "chrome",
+    "url": "https://trello.com/login",
+    "credentials": {
+      "owner": {
+        "username": "",
+        "password": ""
+      }
+    }
+  }
+}
