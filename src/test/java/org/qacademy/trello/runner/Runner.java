@@ -5,6 +5,8 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import org.qacademy.core.ui.DriverManager;
+
 @CucumberOptions(
         glue = {"org.qacademy"},
         features = "src/test/resources/features",
@@ -19,5 +21,6 @@ public class Runner extends AbstractTestNGCucumberTests {
 
     @AfterTest
     public void afterAllScenarios() {
+        DriverManager.getInstance().getDriver().quit();
     }
 }
