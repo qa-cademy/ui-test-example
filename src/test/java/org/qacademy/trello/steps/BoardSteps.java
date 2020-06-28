@@ -66,8 +66,8 @@ public class BoardSteps {
         closeBoard.selectPermanentlyCloseBoard();
     }
 
-    @Then("I don't should see the board {string}")
-    public void iDonTShouldSeeTheBoard(final String titleBoard) {
+    @Then("I should not see the board {string}")
+    public void iShouldNotSeeTheBoard(final String titleBoard) {
         dashboard.clickBtnHeaderBoard();
         assertFalse(dashboard.doIsExistBoard(titleBoard));
     }

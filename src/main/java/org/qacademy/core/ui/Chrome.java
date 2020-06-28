@@ -8,7 +8,6 @@ public class Chrome implements Browser {
 
     @Override
     public WebDriver getBrowser() {
-        WebDriverManager.chromedriver().clearPreferences();
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }

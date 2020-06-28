@@ -1,5 +1,7 @@
 package org.qacademy.core.ui;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -42,9 +44,12 @@ public class WebDriverAction {
 
     public boolean isExistingSelector(final By element) {
         try {
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             driver.findElement(element);
         } catch (NoSuchElementException e) {
             return false;
+        } finally {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         }
         return true;
     }
